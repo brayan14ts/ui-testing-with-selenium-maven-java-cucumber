@@ -1,0 +1,5 @@
+# Ignorar la carpeta screenshots en la raíz del proyecto
+/screenshots/
+
+# Ignorar el archivo test.properties en la carpeta src/test/resources
+/src/test/resources/test.properties
