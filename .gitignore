@@ -1,5 +1,31 @@
-# Ignorar la carpeta screenshots en la raíz del proyecto
-/screenshots/
+# Archivos de compilación
+target/
+*.class
 
-# Ignorar el archivo test.properties en la carpeta src/test/resources
-/src/test/resources/test.properties
+# Archivos de configuración de IDE
+.idea/
+*.iml
+*.ipr
+
+# Archivos de configuración de Maven
+.mvn/
+*.jar
+*.war
+
+# Archivos de configuración de Cucumber
+*.feature
+
+# Archivos generados
+*.log
+*.tmp
+*.swp
+
+# Configuración de pruebas
+src/test/resources/test.properties
+
+# Capturas de pantalla
+screenshots/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
