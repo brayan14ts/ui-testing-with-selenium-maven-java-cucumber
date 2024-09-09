@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.LoginPage;
-import pages.HomePage;
+import pages.HomeAccountPage;
 import utils.DriverUtils;
 
 public class LoginSteps{
@@ -32,10 +32,10 @@ public class LoginSteps{
         loginPage.clickLoginButton();
     }
 
-    @Then("el usuario debería ser redirigido a la página principal")
+    @Then("el usuario debería ser redirigido al home del cliente")
     public void thenUserShouldBeRedirectedToHomePage() {
         String currentUrl = driver.getCurrentUrl();
-        String homeUrl = DriverUtils.getProperty("home.url");
+        String homeUrl = DriverUtils.getProperty("homeclient.url");
         assert(currentUrl.equals(homeUrl));
         DriverUtils.takeScreenshot("homePage"); // Captura de pantalla en la página principal
 
@@ -43,11 +43,11 @@ public class LoginSteps{
 
     @And("visualiza un mensaje de bienvenida que incluye la palabra {string}")
     public void andUserShouldSeeWelcomeMessage(String welcomeMessage) {
-        assert(HomePage.isWelcomeMessageDisplayed(welcomeMessage));
+        assert(HomeAccountPage.isWelcomeMessageDisplayed(welcomeMessage));
     }
 
-    @After
-    public void afterScenario() {
-        DriverUtils.quitDriver();
-    }
+    //@After
+    //public void afterScenario() {
+    //     DriverUtils.quitDriver();
+    //}
 }

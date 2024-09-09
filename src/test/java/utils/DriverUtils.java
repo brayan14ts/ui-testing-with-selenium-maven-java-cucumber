@@ -61,4 +61,29 @@ public class DriverUtils {
             e.printStackTrace();
         }
     }
+
+    public static void redirectUrl(String pageName) {
+        WebDriver driver = getDriver();
+        String url = properties.getProperty(pageName + ".url");
+        if (url != null) {
+            driver.get(url);
+            driver.manage().window().maximize(); //
+        } else {
+            throw new IllegalArgumentException("No URL found for page name: " + pageName);
+        }
+    }
+
+    // Método para imprimir un mensaje de depuración
+    public static void consoleDebug(String message) {
+        System.out.println(message);
+    }
+
+    //espera explicita en milisegundos
+    public static void sleep(int milliseconds) {
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
