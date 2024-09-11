@@ -1,0 +1,8 @@
+stepDefinitions\LoginSteps.class
+pages\LoginPage.class
+pages\HomeAccountPage.class
+pages\HomePage.class
+pages\CheckoutPage.class
+stepDefinitions\PurchaseSteps.class
+utils\DriverUtils.class
+utils\WaitUtils.class

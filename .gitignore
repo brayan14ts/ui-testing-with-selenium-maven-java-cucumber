@@ -1,31 +1,5 @@
-# Archivos de compilación
-target/
-*.class
-
-# Archivos de configuración de IDE
-.idea/
-*.iml
-*.ipr
-
-# Archivos de configuración de Maven
-.mvn/
-*.jar
-*.war
-
-# Archivos de configuración de Cucumber
-*.feature
-
-# Archivos generados
-*.log
-*.tmp
-*.swp
-
 # Configuración de pruebas
-src/test/resources/test.properties
+*/test.properties
 
 # Capturas de pantalla
 screenshots/
-
-# Archivos del sistema operativo
-.DS_Store
-Thumbs.db
