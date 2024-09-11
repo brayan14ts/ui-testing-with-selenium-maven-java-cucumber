@@ -12,6 +12,7 @@ public class HomePage {
     private static final By aProductLocator = By.xpath("//span[contains(text(),'Bicicleta de Spinning VKT0145 pHILCO')]");
     private final By addACartLocator = By.className("button-root-Bhn");
     private static final By goToCheckoutLocator = By.xpath("//span[text()='finalizar compra']");
+    By HomeButtonLocator = By.xpath("//img[@alt='logo']");
 
     // Constructor
     public HomePage(WebDriver driver) {
@@ -25,6 +26,12 @@ public class HomePage {
         aProductElement.click();
     }
 
+    public void clickOnHomeButton() {
+        DriverUtils.sleep(5000);
+        WebElement HomeButtonElement = driver.findElement(HomeButtonLocator);
+        HomeButtonElement.click();
+    }
+
     public void clickOnAddACart() {
         DriverUtils.sleep(5000); // espera de 5 segundos
         WebElement addACartElement = driver.findElement(addACartLocator);
@@ -32,9 +39,9 @@ public class HomePage {
     }
 
     public void clickGoToCheckout() {
+        DriverUtils.sleep(5000); // espera de 5 segundos
         WebElement goToCheckoutElement = driver.findElement(goToCheckoutLocator);
         goToCheckoutElement.click();
-        DriverUtils.sleep(10000);
     }
 }
 

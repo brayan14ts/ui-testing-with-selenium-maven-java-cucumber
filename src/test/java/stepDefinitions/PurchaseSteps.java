@@ -15,7 +15,7 @@ public class PurchaseSteps {
 
     @And("el usuario está en la pagina del {string}")
     public void theUserIsOnTheHomePage(String string) {
-        DriverUtils.redirectUrl(string);
+        homePage.clickOnHomeButton();
     }
 
     @And("agrega un producto al carrito")
@@ -40,9 +40,9 @@ public class PurchaseSteps {
 
 
 
-    @After
-    public void afterScenario() {
-        DriverUtils.quitDriver();
-    }
+    //@After
+    //public void afterScenario() {
+    //    DriverUtils.quitDriver();
+    //}
 
 }

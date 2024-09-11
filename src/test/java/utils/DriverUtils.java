@@ -5,6 +5,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import java.util.Random;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,7 +38,7 @@ public class DriverUtils {
     public static void navigateToLoginPage() {
         WebDriver driver = getDriver();
         driver.get(properties.getProperty("login.url"));
-        driver.manage().window().maximize(); // Opcional
+        driver.manage().window().maximize();
     }
 
     public static String getProperty(String key) {
@@ -86,4 +87,24 @@ public class DriverUtils {
             e.printStackTrace();
         }
     }
+
+    // Método para generar un número aleatorio de X dígitos (lo retorna en String)
+    public static String generateRandomNumber(int numberOfDigits) {
+        if (numberOfDigits <= 0) {
+            throw new IllegalArgumentException("El número de dígitos debe ser mayor que 0");
+        }
+
+        Random random = new Random();
+        // Generar el número de dígitos aleatorio
+        int lowerBound = (int) Math.pow(10, numberOfDigits - 1);
+        int upperBound = (int) Math.pow(10, numberOfDigits) - 1;
+
+        int randomNumber = lowerBound + random.nextInt(upperBound - lowerBound + 1);
+
+        // Convertir el número a una cadena
+        return String.valueOf(randomNumber);
+    }
+
+
+
 }

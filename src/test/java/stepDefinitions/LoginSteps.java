@@ -22,6 +22,7 @@ public class LoginSteps{
 
     @When("el usuario ingresa el nombre de usuario y la contrasenia")
     public void whenUserEntersCredentials() {
+        DriverUtils.sleep(5000);
         loginPage.enterUsername(DriverUtils.getProperty("username"));
         loginPage.enterPassword(DriverUtils.getProperty("password"));
         DriverUtils.takeScreenshot("credentialsEntered"); // Captura de pantalla después de ingresar credenciales
